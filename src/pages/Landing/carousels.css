@@ -1,0 +1,249 @@
+#home-carousels{
+    padding-top: 10px;
+    justify-content: center;
+    height: 500px;
+    position: relative;
+}
+#home-carousels ol{
+    list-style: none;
+}
+/* .carousel{
+  height: 500px;
+  top: 20px;
+} */
+/* .carousel {
+  position: relative;
+  padding-top: 40%;
+  filter: drop-shadow(0 0 10px #0003);
+  perspective: 100px;    
+  height: 500px;
+} */
+
+.carousel__viewport {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-x: scroll;
+  counter-reset: item;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  height: 500px;
+  margin-top: 0px;
+}
+
+.carousel__slide {
+  padding-top: 75px;
+  position: relative;
+  flex: 0 0 105%;
+  width: 100%;
+  background-color: rgb(153, 230, 255);
+  counter-increment: item;
+  height: 490px;
+  
+}
+#carousel__slide1{
+  
+  background-image: url('https://media.istockphoto.com/id/1162791905/photo/smiling-young-woman-going-on-a-road-trip.jpg?s=612x612&w=0&k=20&c=YuCu2XsqlEp1bNGTrGAwMY9fRVR14TlOnZOPVKGD2aA='); 
+}
+#carousel__slide2{
+ 
+  background-image: url('https://media.istockphoto.com/id/986869648/photo/nice-beautiful-young-woman-smile-and-use-mobile-phone-touching-the-screen-inside-the-car-while.jpg?b=1&s=170667a&w=0&k=20&c=ijsA6fPCwtpCgRFNt87H_hclNeyvyggJ35fndZ4YPxo=');
+}
+#carousel__slide3{
+ 
+  background-image: url('https://media.istockphoto.com/id/1351421447/photo/a-group-of-women-walking-and-talking-after-doing-some-outdoor-exercise.jpg?s=612x612&w=0&k=20&c=fOnf3AqceRojz-DPho8VXEQN5jDge_tQHl-kAP4BcUs=');
+}
+#carousel__slide4{
+  background-image: url('https://media.istockphoto.com/id/922762614/photo/network-gps-navigation-modern-city-future-technology.jpg?s=612x612&w=0&k=20&c=q-CQHzSPK2tyG8EhM3BxMlMHSF-ipaxfPNoOqW7hv6I=');
+  
+}
+
+.carousel__slide:before {
+  content: counter(item);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-40%,70px);
+  color: #fff;
+  font-size: 2em;
+  visibility: hidden;
+
+}
+ .slide{
+  height: 200px;
+  width: 500px;
+  /* background-color: rgb(248, 245, 245); */
+  border-radius: 10%;
+  margin-left: 55%;
+  margin-top: 200px;
+ 
+  
+}
+.carousel h1{
+  padding: 10px;
+  font-size: 50px;
+  backdrop-filter: blur(4px) ;
+  margin-bottom: 2px;
+}
+.slide p{
+  margin: 10px ;
+  margin-top: 2px;
+  padding: 18px;
+  font-size: 26px;
+  height: 120px;
+  backdrop-filter: blur(3px) ;
+}
+.slide button{
+  display: block;
+  border: rgb(20, 20, 20);
+  background-color: #3f74f9a3;
+  border-radius: 10px;
+  margin: 5px;
+  margin-bottom: 20px;
+  padding: 12px 22px;
+
+  /* margin-top: 11%; */
+  margin-left: 40%;
+  /* width: 100px; */
+  font-size: 18px;
+  }
+.slide button:hover{
+  background-color: rgb(6, 6, 6);
+  color: #f6f7f7;
+  cursor: pointer;
+}
+.carousel__snapper {
+  position: absolute;
+  top: -78px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+}
+
+@media (hover: hover) {
+  .carousel__snapper {
+    animation-name: tonext, snap;
+    animation-timing-function: ease;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+  .carousel__slide:last-child .carousel__snapper {
+    animation-name: tostart, snap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel__snapper {
+    animation-name: none;
+  }
+}
+
+.carousel:hover .carousel__snapper,
+.carousel:focus-within .carousel__snapper {
+  animation-name: none;
+}
+
+.carousel__navigation {
+  position: relative;
+  right: 0;
+  top: 28em;
+  /* bottom: 0; */
+  left: 0;
+  text-align: center;
+}
+
+.carousel__navigation-list,
+.carousel__navigation-item {
+  display: inline-block;
+}
+
+.carousel__navigation-button {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-color: #333;
+  background-clip: content-box;
+  border: 0.25rem solid transparent;
+  border-radius: 50%;
+  font-size: 0;
+  transition: transform 0.1s;
+}
+
+.carousel::before,
+.carousel::after,
+.carousel__prev,
+.carousel__next {
+  position: absolute;
+  top: 0;
+  margin-top: 25%;
+  width: 4rem;
+  height: 4rem;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  font-size: 0;
+  outline: 0;
+  
+}
+
+.carousel::before,
+.carousel__prev {
+  left: 0rem;
+}
+
+.carousel::after,
+.carousel__next {
+  right: 0rem;
+}
+
+.carousel::before,
+.carousel::after {
+  content: '';
+  z-index: 1;
+  background-color: #333;
+  background-size: 1.5rem 1.5rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 4rem;
+  text-align: center;
+  pointer-events: none;
+  
+}
+
+.carousel::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+.carousel::after {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+
+*::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: none;
+  }
+  
+  * {
+    -ms-overflow-style: none;
+  }
+  @media only screen and (max-width: 763px){
+    .slide{
+      margin-left: 5%;
+    }
+  }

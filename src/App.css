@@ -1,0 +1,25 @@
+
+.ride-book{
+    justify-items: center;
+}
+.booking-map input{
+    width: 250px;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 5px;
+
+}
+.booking-map button{
+    background-color: #265D9B;
+    color: white;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    padding: 5px;
+    width: 200px;
+}
+.booking-map button:hover{
+    background-color: #64B5F6;
+    color: black;
+}

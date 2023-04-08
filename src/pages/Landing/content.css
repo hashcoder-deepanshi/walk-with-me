@@ -1,0 +1,98 @@
+.about{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* height: 100; */
+}
+.vision{
+    padding: 10px;
+    display: flex;
+    height: 50vh;
+    width: 100%;
+}
+.vision-img{
+   
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    width: 40%;
+    border-radius: 100%;
+    justify-self: center;
+    padding-left: 40px;
+}
+.vision-img img{
+    
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+}
+
+.viscontent{
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+.vision h1, .work h1{
+    justify-content: center;
+    text-align: center;
+    font-size: 58px;
+    display: block;
+    position: relative;
+    /* color: aliceblue; */
+   
+}
+ .vision p, .work p{
+    display: block;
+    width: 60%;
+    height: 300px;
+    margin: 10px;
+    padding: 5px;
+    font-size: 22px;
+    color: rgb(20, 20, 20);
+    text-align: center;
+}
+.work{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    /* height: 50%; */
+}
+.workcontent{
+    display: flex;
+    /* flex-direction: row-reverse; */
+    padding: 10px;
+    align-content: center;
+    justify-content: space-around;
+   
+}
+.work-img{
+    width: 30%;
+    height: 200px;
+    border-radius: 20%;
+    justify-content: center;
+}
+.work-img img{
+    height: 300px;
+    border-radius: 20%;
+    margin-left: 100px;
+}
+.workcontent p{
+    vertical-align: center;
+    
+}
+@media only screen and (max-width: 763px){
+    .vision p, .work p{
+        font-size: 12px;
+    }
+    .work-img img{
+        visibility: hidden;
+    }
+
+}
